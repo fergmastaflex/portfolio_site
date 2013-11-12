@@ -1,2 +1,5 @@
+<% @project.pictures.each do |p| %>
+  <%= image_tag p.image.url(:medium) %>
+<% end %>
 <h1><%= @project.title %></h1>
 <p><%= @project.description %></p>

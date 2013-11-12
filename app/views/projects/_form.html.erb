@@ -2,5 +2,9 @@
   <%= f.error_notification %>
   <%= f.input :title %>
   <%= f.input :description %>
+  <%= f.simple_fields_for :pictures do |p| %>
+    <%= p.input :image %>
+    <%= p.input :caption %>
+  <% end %>    
   <%= f.button :submit %>
 <% end %>

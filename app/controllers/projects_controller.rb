@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   before_filter :find_project, only: [:edit, :show, :update, :destroy]
 
   def index
-    @projects = Project.all
+    @projects = Project.includes(:pictures)
   end
 
   def edit
@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @project.pictures.build
   end
 
   def show
@@ -41,5 +42,21 @@ class ProjectsController < ApplicationController
 
   def find_project
     @project = Project.find(params[:id])
+  end
+  
+  def new_picture
+    @project = Project.find(params[:project_id])
+    @picture = @project.pictures.new
+  end
+
+  def create_picture
+    @project = Project.find(params[:project_id])
+    @picture = @project.pictures.new(params[:picture])
+    if @picture.save
+      redirect_to project_path(@project), notice: "Image successfully uploaded"
+    else
+      flash.now.alert = 'Image could not be saved. See errors below'
+      render :new_picture
+    end
   end
 end

@@ -1,10 +1,17 @@
 <%= simple_form_for(@project) do |f| %>
   <%= f.error_notification %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.simple_fields_for :pictures do |p| %>
-    <%= p.input :image %>
-    <%= p.input :caption %>
-  <% end %>    
+  <div>
+    <%= f.input :title %>
+    <%= f.input :description %>
+  </div>
+  <div class='pictures'>
+    <%= f.simple_fields_for :pictures do |p| %>
+      <%= render 'picture_fields', f: p %>
+    <% end %>
+    <div class='link'>    
+      <%= link_to_add_association 'Add photo', f, :pictures, :class => "btn btn-primary" %>
+    </div>
+  </div>
+  
   <%= f.button :submit %>
 <% end %>

@@ -15,6 +15,7 @@ gem 'pg'
 gem 'simple_form'
 gem 'unicorn'
 gem "paperclip", "~> 3.0"
+gem "cocoon"
 
 group :development do
   gem 'better_errors'

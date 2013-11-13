@@ -3,11 +3,13 @@
 </div>
 <div class="row">
   <div class="col-md-6">
+    <%= image_tag @project.pictures.first.image.url(:large), class: 'img-responsive img-rounded' %>
+  </div>
+  <div class='well col-md-6'>
+    <p><%= simple_format(@project.description) %></p>
     <% @project.pictures.each do |p| %>
-      <%= image_tag p.image.url(:large), class: 'img-responsive' %>
+      <%= image_tag p.image.url(:thumb) %>
     <% end %>
   </div>
-  <div class='col-md-6'>
-    <p><%= @project.description %></p>
-  </div>
+  <%= link_to "edit post", edit_project_path(@project), class: 'btn btn-primary btn-md' %>
 </div>

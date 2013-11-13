@@ -2,8 +2,7 @@ class ProjectsController < ApplicationController
   before_filter :find_project, only: [:edit, :show, :update, :destroy]
 
   def index
-    @projects = Project.includes(:pictures)
-    
+    @projects = Project.order("created_at ASC").includes(:pictures)
   end
 
   def edit

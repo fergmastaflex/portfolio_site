@@ -4,7 +4,8 @@ class Picture < ActiveRecord::Base
     has_attached_file :image, 
                     styles: { 
                       large: "600x600>", 
-                      medium: "300x300>", 
+                      medium: "300x300#",
+                      cropped: "200x200#", 
                       thumb: "100x100>"
                       }
   validates :image, presence: true

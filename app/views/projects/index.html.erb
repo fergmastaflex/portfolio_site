@@ -1,5 +1,13 @@
-<% @projects.each do |p| %>
-  <%= image_tag p.pictures.first.image.url(:medium) %>
-  <p><%= p.description %></p>
-<% end %>
-<%= link_to "New project", new_project_path, class: 'btn btn-primary btn-md' %>
+<div class="page-header">
+  <h1 class='big-header'>Joey Ferguson.</h1>
+</div>
+<div class="row">
+  <% @projects.each do |p| %>
+    <div class="project-tile col-xs-6 col-sm-4 col-md-3 no-gutters">
+      <div class="project-title">
+        <h4><%= link_to p.title, project_path(p) %></h4>
+      </div>
+      <%= image_tag p.pictures.first.image.url(:medium), class: 'img-responsive' %>
+    </div>
+  <% end %>
+</div>

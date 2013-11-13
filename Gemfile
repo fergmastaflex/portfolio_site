@@ -16,7 +16,7 @@ gem 'simple_form'
 gem 'unicorn'
 gem "paperclip", "~> 3.0"
 gem "cocoon"
-gem 'aws-sdk'
+gem "aws-sdk"
 
 
 group :development do

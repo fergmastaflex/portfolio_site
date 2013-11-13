@@ -1,0 +1,20 @@
+# Add account credentials and API keys here.
+# See http://railsapps.github.io/rails-environment-variables.html
+# This file should be listed in .gitignore to keep your settings secret!
+# Each entry sets a local environment variable and overrides ENV variables in the Unix shell.
+# For example, setting:
+# GMAIL_USERNAME: Your_Gmail_Username
+# makes 'Your_Gmail_Username' available as ENV["GMAIL_USERNAME"]
+
+# Add application configuration variables here, as shown below.
+#
+MANDRILL_USERNAME: joey@fergmedia.com
+MANDRILL_PASSWORD: vpGjJvKzpISbDez-t22r1A
+ADMIN_NAME: First User
+ADMIN_EMAIL: user@example.com
+ADMIN_PASSWORD: changeme
+DEVISE_SECRET_TOKEN: 266f1a592e39446736e121841fabac1bd73002c6d5d0859221dafd85e79db500d8ae44a62823e3034a7aa7ac14b2c533a991a419f24004b93a97ade56cbc3b37
+DEVISE_EMAIL: 'noreply@weseekafter.com'
+AWS_ACCESS_KEY_ID: AKIAIIZAUO6PVF5WYRCA
+AWS_SECRET_ACCESS_KEY: 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
+FOG_DIRECTORY: ferg_portfolio

@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.includes(:pictures)
+    
   end
 
   def edit

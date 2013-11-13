@@ -1,0 +1,13 @@
+<div class='col-sm-6 col-md-8'>
+<%= simple_form_for(@message, url: contact_path) do |f| %>
+  <%= f.error_notification %>
+
+    <%= f.input :name, :required => true%>
+    <%= f.input :email, :required => true %>
+    <%= f.input :subject, :required => true %>
+    <%= f.input :body, :required => true, as: :text %>
+    <%= f.button :submit, class: "btn btn-primary btn-sm" %>
+  </div>
+
+  
+<% end %>

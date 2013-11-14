@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_filter :find_project, only: [:edit, :show, :update, :destroy]
 
+
   def index
     @projects = Project.order("created_at ASC").includes(:pictures)
   end
@@ -15,7 +16,9 @@ class ProjectsController < ApplicationController
   end
 
   def show
-
+    respond_to do |format|
+      format.js 
+    end
   end
 
   def create

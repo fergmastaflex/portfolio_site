@@ -1,13 +1,14 @@
-<div class='col-sm-6 col-md-8'>
-<%= simple_form_for(@message, url: contact_path) do |f| %>
-  <%= f.error_notification %>
-
-    <%= f.input :name, :required => true%>
-    <%= f.input :email, :required => true %>
-    <%= f.input :subject, :required => true %>
-    <%= f.input :body, :required => true, as: :text %>
-    <%= f.button :submit, class: "btn btn-primary btn-sm" %>
+<div class = 'container contact-form'>
+  <div class='col-sm-6 col-md-8'>
+    <h1 class='big-header'>Contact me.</h1>
+    <%= simple_form_for(@message, url: contact_path) do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :name, :required => true%>
+      <%= f.input :email, :required => true %>
+      <%= f.input :subject, :required => true %>
+      <%= f.input :body, :required => true, as: :text, input_html: {rows: 8} %>
+      <%= f.button :submit, class: "btn btn-primary btn-sm" %>
+      <%= link_to "Back", root_path, class: "btn btn-primary btn-sm" %>
+    <% end %>
   </div>
-
-  
-<% end %>
+</div>

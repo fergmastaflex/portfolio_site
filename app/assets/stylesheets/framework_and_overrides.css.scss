@@ -1,6 +1,10 @@
 @import "bootstrap";
 @import "projects";
 
+body{
+  top: 10px;
+}
+
 .modal-dialog{
   min-width: 80%;
 }

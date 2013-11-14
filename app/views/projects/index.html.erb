@@ -9,6 +9,7 @@
         <h4><%= link_to p.title, project_path(p), :remote => true %></h4>
       </div>
       <%= image_tag p.pictures.first.image.url(:medium), class: 'img-responsive' %>
+      <%= link_to "Edit", edit_project_path(p) %>
     </div>
   <% end %>
 </div>
